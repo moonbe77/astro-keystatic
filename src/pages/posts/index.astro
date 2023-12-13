@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content'
+import MarkdownPostLayout from '../../layout/MarkdownPostLayout.astro';
+
+const posts = await getCollection('posts') 
+---
+<MarkdownPostLayout>
+<h1>Posts</h1>
+<ul>
+  {posts.map(post => (
+    <li>
+      <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+    </li>
+  ))}
+</ul>
+</MarkdownPostLayout>
