@@ -11,6 +11,7 @@ export default defineConfig({
   integrations: [react(), markdoc(), keystatic(), tailwind()],
   output: "hybrid",
   adapter: node({
-    mode: "standalone"
-  })
+    mode: "standalone",
+  }),
+  site: "https://moonbe77.github.io/astro-keystatic/",
 });
